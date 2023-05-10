@@ -1,7 +1,7 @@
 import './App.css';
 import { Calculator } from './apps/calculator';
 import { Information } from './apps/calculator';
-
+import Salaries from './apps/salaries';
 
 function hello(user) {
   if (user) {
@@ -51,55 +51,44 @@ const b = 10;
   };
 
   
- // const salaries = user.salaries.map((salary, index) => {
- //   return <tr><td>{index + 1}</td><td>{salary.salary}</td><td>{salary.from_date}</td></tr>
- // });
+  // let w = new Welcome(user);
+  // console.log(w);
 
-  return (
-    <div>
-    {/* <p>Данные:</p> */}
-      {/* <p>Имя: {user.name}</p> */}
-      {/* <p>Фамилия: {user.last_name}</p> */}
-      {/* <p>Возраст: {user.age}</p> */}
+  //const c = <span>Hello</span>;
+  //const name = hello();
 
-      {/* <table> */}
-      {/* <caption>Питомцы:</caption> */}
-        {/* <thead> */}
-          {/* <tr> */}
-            {/* <th>#</th> */}
-            {/* <th>Name</th> */}
-            {/* <th>Age</th> */}
-          {/* </tr> */}
-        {/* </thead> */}
-        {/* <tbody> */}
-          {/* {pets} */}
-        {/* </tbody> */}
-      {/* </table> */}
-      {/* <table> */}
-        {/* <caption>Зарплата:</caption> */}
-        {/* <thead> */}
-          {/* <tr> */}
-            {/* <th>#</th> */}
-            {/* <th>Salary</th> */}
-            {/* <th>Date</th> */}
-          {/* </tr> */}
-        {/* </thead> */}
-        {/* <tbody> */}
-          {/* {salaries} */}
-        {/* </tbody> */}
-      {/* </table> */}
-{/*  */}
-       {/* <p>{Calculator()}</p>   */}
-       {/* <Calculator user={user} a={'text'} b={b}/>   */}
-     {/*  */}
-        {/* {<Calculator/> }  */}
-        {/* {<Calculator/> }  */}
-        {/* {<Calculator/> }  */}
-       {/*  */}
-       {<Information user={user}/>}
-    </div>
-  ); 
-};
+  // reduce
+  // filter
+  // forEach
+  // map
 
+  // <tr><td>11</td><td>5670</td><td>2018</td></tr>
+  const salaries = user.salaries.map((salary, index) => {
+    return <tr key={index}><td>{index + 1}</td><td>{salary.salary}</td><td>{salary.from_date}</td></tr>
+  });
+
+  // comment
+   return (
+     <div> 
+        <p>A: {a}</p> 
+        <p>B: {b}</p>
+
+       <p>Sum: {a + b}</p>
+
+       <p>{c}, {name}</p>
+
+      {/* <p>{Calculator()}</p> */}
+      {/* <Calculator user={user} a={'text'} b={b}/> */}
+       {/* <Calculator/> */}
+      {/* // <Calculator/> */}
+      {/* <Calculator/> */}
+
+       {/* <Welcome user={user} label='red'/> */}
+       {/* <Salarys user={user} label='red'/> */}
+      <Salaries items={salaries}/>
+      <Information user={user}/>
+     </div>
+   );
+ }
 
 export default App;
