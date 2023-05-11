@@ -1,4 +1,15 @@
 import React from "react";
+interface SalariesProps {
+  user: {
+name: string,
+age: number,
+    salaries: [
+      salary: number,
+      from_date: number,
+    ]
+  },
+
+}
 
 class Salaries extends React.Component {
    
