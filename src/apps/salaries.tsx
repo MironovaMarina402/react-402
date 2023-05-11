@@ -12,6 +12,10 @@ age: number,
 }
 
 class Salaries extends React.Component {
+name = '',
+age = 0,
+salary =0;
+from_date = 0;
    
     render () {
 
