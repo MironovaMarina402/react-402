@@ -9,15 +9,21 @@ interface SalariesProps {
     ]
 }
 
-class Salaries extends React.Component<SalariesProps> {
+class SalaryRow extends React.Component<SalariesProps>{
     render() {
         const {salaries} = this.props;
-
+    
         const salaries_rows = salaries.map((salary, index) => {
-            return <tr key={index}><td>{index + 1}</td><td>{salary.salary}</td><td>{salary.from_date}</td></tr>
-        });
-
-        return <table>
+        //      return <div className="row">
+        //       <img onClick={() => {
+        //        console.log(salaries);
+        //    }} /> <div/>
+          return <tr key={index}><td>{index + 1}</td><td>{salary.salary}</td><td>{salary.from_date}</td></tr>     
+     //  return (<Salaries/>)
+    });
+        
+          
+        return <table className="table">
             <thead>
             <tr>
                 <th>#</th>
@@ -29,7 +35,18 @@ class Salaries extends React.Component<SalariesProps> {
                 {salaries_rows}
             </tbody>
         </table>; 
-    }
-}
+    
+     }
+     }       
 
-export default Salaries;
+
+
+class Salaries extends React.Component {
+          
+render() {
+    return '';
+ }
+ }       
+
+
+export default SalaryRow;

@@ -1,33 +1,35 @@
 import React from "react";
+import { IUser } from "./interfaces/user";
 
-
-interface IUser {
-    emp_no: string,
-    first_name: string,
-    last_name: string,
-    birth_date: string,
-    gender: string,
-    hire_date: string,
-}
-interface DetailsProps {
+interface DetailProps {
     user: IUser
 }
 
-class Details extends React.Component<DetailsProps> {
+class Detail extends React.Component<DetailProps> {
     render() {
         const {user} = this.props;
 
-        return <>
-            <ol>
-                <li> {user.emp_no}</li>
-                <li> {user.first_name}</li>
-                <li> {user.last_name} </li>
-                <li> {user.birth_date}</li>
-                <li> {user.gender}</li>
-                <li> {user.hire_date}</li>
-            </ol>
-        </>;
+        return <div className="row">
+            <div className="col-4">
+                <img src="https://loremflickr.com/320/240" 
+                    alt="" 
+                    className="img-fluid img-thumbnail"
+                    onClick={() => {
+                        console.log(user);
+                    }}
+                />
+            </div>
+
+            <div className="col">
+                <ul className="list-unstyled">
+                    <li>Номер: {user.emp_no}</li>
+                    <li>ФИО: {user.last_name} {user.first_name} </li>
+                    <li>Дата рождения: {user.birth_date}</li>
+                    <li>Трудоустроен: {user.hire_date}</li>
+                </ul>
+            </div>
+        </div>;
     }
 }
 
-export default Details;
+export default Detail;
